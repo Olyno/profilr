@@ -8,14 +8,14 @@ export default () => {
         <Image src='/heart.svg' alt='heart logo' width={100} height={100} />
       </div>
       <div className='flex gap-4 justify-center items-center flex-wrap'>
-        <button className='w-10 h-10 md:w-16 md:h-16'>
-          <Image src='/arrows_1.svg' alt='left arrow' width={40} height={40} />
+        <button className='relative w-[75px] h-[75px] md:w-[150px] md:h-[150px]'>
+          <Image src='/arrows_1.svg' alt='left arrow' fill />
         </button>
         <p className='text-base md:text-2xl self-center italic px-4 text-center'>
           "I love this product so much! It rocks!"
         </p>
-        <button className='w-10 h-10 md:w-16 md:h-16'>
-          <Image src='/arrows_2.svg' alt='right arrow' width={40} height={40} />
+        <button className='relative w-[75px] h-[75px] md:w-[150px] md:h-[150px]'>
+          <Image src='/arrows_2.svg' alt='right arrow' fill />
         </button>
       </div>
       <div className='flex flex-col items-center'>
