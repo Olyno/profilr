@@ -15,7 +15,7 @@ const ButtonLink: React.FC<PropsWithChildren<Props>> = ({
   htmlElement = 'button',
 }) => {
   const baseClassName =
-    'bg-primary text-white px-5 py-3 rounded-md flex justify-center items-center';
+    'bg-primary text-white px-5 py-3 rounded-md flex justify-center items-center hover:brightness-90';
   const finalClassName = `${className} ${baseClassName}`;
 
   if (htmlElement === 'a') {

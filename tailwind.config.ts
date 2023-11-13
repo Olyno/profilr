@@ -12,6 +12,9 @@ const config: Config = {
       colors: {
         primary: colors.purple['500'],
       },
+      brightness: {
+        90: '.90',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
