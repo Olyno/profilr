@@ -7,45 +7,32 @@ export default () => {
       <div className='flex justify-center items-center'>
         <Image src='/heart.svg' alt='heart logo' width={100} height={100} />
       </div>
-      <div className='flex gap-5 justify-center'>
-        <button>
-          <Image
-            src='/arrows_1.svg'
-            alt='left_arrow'
-            width={200}
-            height={200}
-          />
+      <div className='flex gap-4 justify-center items-center flex-wrap'>
+        <button className='w-10 h-10 md:w-16 md:h-16'>
+          <Image src='/arrows_1.svg' alt='left arrow' width={40} height={40} />
         </button>
-        <p className='text-2xl self-center italic'>
-          "I love this product so much ! It rocks!"
+        <p className='text-base md:text-2xl self-center italic px-4 text-center'>
+          "I love this product so much! It rocks!"
         </p>
-        <button>
-          <Image
-            src='/arrows_2.svg'
-            alt='right_arrow'
-            width={200}
-            height={200}
-          />
+        <button className='w-10 h-10 md:w-16 md:h-16'>
+          <Image src='/arrows_2.svg' alt='right arrow' width={40} height={40} />
         </button>
       </div>
       <div className='flex flex-col items-center'>
         <Image src='/user.svg' alt='user' width={50} height={50} />
-
-        <div className='flex'>
-          <Image src='/star.svg' alt='star' width={20} height={20} />
-          <Image src='/star.svg' alt='star' width={20} height={20} />
-          <Image src='/star.svg' alt='star' width={20} height={20} />
-          <Image src='/star.svg' alt='star' width={20} height={20} />
-          <Image src='/star.svg' alt='star' width={20} height={20} />
+        <div className='flex justify-center mt-2'>
+          {[...Array(5)].map((_, i) => (
+            <Image key={i} src='/star.svg' alt='star' width={20} height={20} />
+          ))}
         </div>
-        <div className='text-center'>
+        <div className='text-center mt-2'>
           <p>The Rock</p>
           <p>Los Angeles</p>
         </div>
       </div>
-      <div className='flex justify-evenly mt-20'>
+      <div className='flex flex-wrap justify-evenly mt-20 gap-5 md:gap-0'>
         <ScreenCard />
-        <ScreenCard className='mt-[7rem]' />
+        <ScreenCard className='md:mt-28' />
         <ScreenCard />
       </div>
     </section>

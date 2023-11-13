@@ -29,21 +29,24 @@ export default () => {
 
   return (
     <section id='section_faq' className='py-10 flex flex-col items-center'>
-      <h1 className='text-[50px]'>FAQS</h1>
+      <h1 className='text-[50px] leading-tight text-center'>FAQS</h1>
 
-      <div className='flex flex-col gap-5 items-center mt-16'>
+      <div className='flex flex-col gap-5 items-center mt-16 w-full px-5 md:px-0'>
         <FaqCollapse />
         <FaqCollapse />
         <FaqCollapse />
         <FaqCollapse />
       </div>
 
-      <p className='mt-20 mb-5'>
+      <p className='mt-20 mb-5 text-center px-5'>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, ut!
       </p>
 
-      <div className='w-full flex justify-center'>
-        <form onSubmit={handleSubmit} className='flex w-2/3 h-[40px]'>
+      <div className='w-full flex justify-center px-5'>
+        <form
+          onSubmit={handleSubmit}
+          className='flex flex-col gap-4 md:flex-row md:gap-0 w-full md:w-2/3'
+        >
           <input
             id='email'
             name='email'
@@ -52,10 +55,16 @@ export default () => {
             required
             onChange={handleChange}
             value={formData.email}
-            className='border-2 rounded-md border-solid border-gray-300 p-2 w-full'
+            className='border-2 rounded-md border-solid border-gray-300 p-2 flex-grow'
           />
-          <ActionButton htmlElement='button' type='submit' className='w-[25%]'>
-            Get started
+          <ActionButton
+            htmlElement='button'
+            type='submit'
+            className='md:w-auto flex-none'
+          >
+            <span className='text-sm md:text-base whitespace-nowrap'>
+              Get started
+            </span>
           </ActionButton>
         </form>
       </div>

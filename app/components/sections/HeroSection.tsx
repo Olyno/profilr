@@ -46,7 +46,8 @@ export default () => {
           className='absolute bottom-[13.5rem]'
         />
       </header>
-      <main className='relative flex justify-evenly items-center py-12'>
+
+      <main className='relative flex flex-col md:flex-row justify-evenly items-center py-12'>
         <Image
           src='https://picsum.photos/400/600'
           width={400}
@@ -56,7 +57,7 @@ export default () => {
         />
         <form
           id='signup_form'
-          className='flex flex-col gap-4 w-1/3'
+          className='flex flex-col gap-4 md:w-1/3 w-2/3 md:mt-0 mt-10'
           onSubmit={handleSubmit}
         >
           <div className='flex flex-col'>
@@ -121,15 +122,11 @@ export default () => {
             Signup
           </SignupButton>
         </form>
-        <Image
-          src='/arrow_cta.svg'
-          alt='Arrow CTA'
-          width={400}
-          height={400}
-          className='absolute bottom-[-0.25rem] right-[12.5rem]'
-        />
+        <div className='absolute md:bottom-[-1.5rem] md:top-[30rem] top-[48rem] md:right-[15.5rem] right-[8.5rem] md:h-[30%] w-[50%] md:w-[30%] h-[40%]'>
+          <Image src='/arrow_cta.svg' alt='Arrow CTA' fill />
+        </div>
       </main>
-      <footer className='px-32 text-center'>
+      <footer className='md:px-32 px-5 text-center mt-12 md:mt-0'>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem quidem
           aliquam qui ex est iste officiis odit error architecto voluptas

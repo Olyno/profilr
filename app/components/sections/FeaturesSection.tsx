@@ -1,34 +1,37 @@
 export default () => {
   return (
-    <section id='section_features' className='py-20 flex flex-col items-center'>
+    <section
+      id='section_features'
+      className='md:p-20 p-5 flex flex-col items-center'
+    >
       <h1 className='text-[50px]'>Great Features</h1>
-      <div className='flex flex-col items-center justify-center w-[40rem] mt-10 ml-20'>
-        <div className='flex items-center m-[10px] gap-10'>
-          <div className='text-[24px] mr-10px bg-gray-600 text-white w-14 h-10 text-center'>
+      <div className='flex flex-col items-center justify-center gap-10 md:w-[40rem] w-full mt-10'>
+        <div className='flex justify-between gap-10'>
+          <div className='bg-gray-600 text-white w-10 h-10 p-5 flex justify-center items-center'>
             ✔
           </div>
-          <div className='text'>
+          <p>
             Ponam in culpa idiota aliis privatatis. Principium ponere culpam in
             se justum praeceptum. Neque improperes et aliis
-          </div>
+          </p>
         </div>
-        <div className='flex items-center m-[10px] gap-10'>
-          <div className='text-[24px] mr-10px bg-gray-600 text-white w-14 h-10 text-center'>
+        <div className='flex justify-between gap-10'>
+          <div className='bg-gray-600 text-white w-10 h-10 p-5 flex justify-center items-center'>
             ✔
           </div>
-          <div className='text'>
+          <p>
             Si osculantur puer tuus aut uxorem tuam, osculum, non dico quod
             omnia quae sunt hominis, et sic non tangetur, si aut ex
-          </div>
+          </p>
         </div>
-        <div className='flex items-center m-[10px] gap-10'>
-          <div className='text-[24px] mr-10px bg-gray-600 text-white w-14 h-10 text-center'>
+        <div className='flex justify-between gap-10'>
+          <div className='bg-gray-600 text-white w-10 h-10 p-5 flex justify-center items-center'>
             ✔
           </div>
-          <div className='text'>
+          <p>
             Ponam in culpa idiota aliis privatatis. Principium ponere culpam in
             se justum praeceptum. Neque improperes et aliis
-          </div>
+          </p>
         </div>
       </div>
     </section>
