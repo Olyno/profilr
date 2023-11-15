@@ -1,3 +1,6 @@
+'use client';
+
+import { Submit } from '@redwoodjs/forms';
 import React, { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
 type Props = {
@@ -26,6 +29,10 @@ const ButtonLink: React.FC<PropsWithChildren<Props>> = ({
         {children}
       </a>
     );
+  }
+
+  if (type === 'submit') {
+    return <Submit className={finalClassName}>{children}</Submit>;
   }
 
   return (

@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { EmailField, Form } from '@redwoodjs/forms';
 import ActionButton from '../ActionButton';
 import FaqCollapse from '../FaqCollapse';
 
@@ -9,22 +9,8 @@ type FormData = {
 };
 
 export default () => {
-  const [formData, setFormData] = useState<FormData>({
-    email: '',
-  });
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    // Handle the form submission logic here, such as sending data to an API
-    console.log(formData);
+  const onSubmit = (data: FormData) => {
+    console.log('Submit: ', data);
   };
 
   return (
@@ -43,20 +29,18 @@ export default () => {
       </p>
 
       <div className='w-full flex justify-center px-5'>
-        <form
-          onSubmit={handleSubmit}
+        <Form
+          onSubmit={onSubmit}
           className='flex flex-col gap-4 md:flex-row md:gap-0 w-full md:w-2/3'
         >
-          <input
-            id='email'
+          <EmailField
             name='email'
-            type='email'
             placeholder='Email address'
-            required
-            onChange={handleChange}
-            value={formData.email}
             className='border-2 rounded-md border-solid border-gray-300 p-2 flex-grow'
+            errorClassName='border-2 rounded-md border-solid border-red-500 p-2 flex-grow'
+            validation={{ required: true }}
           />
+
           <ActionButton
             htmlElement='button'
             type='submit'
@@ -66,7 +50,7 @@ export default () => {
               Get started
             </span>
           </ActionButton>
-        </form>
+        </Form>
       </div>
     </section>
   );

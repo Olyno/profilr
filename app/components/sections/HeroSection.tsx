@@ -1,38 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { ChangeEvent, FormEvent, useState } from 'react';
-import SignupButton from '../ActionButton';
-
-type FormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  terms: boolean;
-};
+import HeroForm from '../HeroForm';
 
 export default () => {
-  const [formData, setFormData] = useState<FormData>({
-    firstName: '',
-    lastName: '',
-    email: '',
-    terms: false,
-  });
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value,
-    });
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    // Handle the form submission logic here, such as sending data to an API
-    console.log(formData);
-  };
-
   return (
     <section id='section_hero' className='bg-gray-100 h-full text-black pb-20'>
       <header className='h-screen flex flex-col items-center justify-center gap-5'>
@@ -55,73 +26,7 @@ export default () => {
           alt='Profilr image placeholder'
           className='rounded-md'
         />
-        <form
-          id='signup_form'
-          className='flex flex-col gap-4 md:w-1/3 w-2/3 md:mt-0 mt-10'
-          onSubmit={handleSubmit}
-        >
-          <div className='flex flex-col'>
-            <label htmlFor='first_name' className='font-semibold'>
-              First Name
-            </label>
-            <input
-              id='first_name'
-              name='firstName'
-              type='text'
-              placeholder='Your first name'
-              required
-              onChange={handleChange}
-              value={formData.firstName}
-              className='border-2 rounded-md border-solid border-gray-300 p-2'
-            />
-          </div>
-          <div className='flex flex-col'>
-            <label htmlFor='last_name' className='font-semibold'>
-              Last Name
-            </label>
-            <input
-              id='last_name'
-              name='lastName'
-              type='text'
-              placeholder='Your last name'
-              required
-              onChange={handleChange}
-              value={formData.lastName}
-              className='border-2 rounded-md border-solid border-gray-300 p-2'
-            />
-          </div>
-          <div className='flex flex-col'>
-            <label htmlFor='email' className='font-semibold'>
-              Email Address
-            </label>
-            <input
-              id='email'
-              name='email'
-              type='email'
-              placeholder='Your email'
-              required
-              onChange={handleChange}
-              value={formData.email}
-              className='border-2 rounded-md border-solid border-gray-300 p-2'
-            />
-          </div>
-          <div className='flex items-center'>
-            <input
-              type='checkbox'
-              name='terms'
-              id='t&c'
-              onChange={handleChange}
-              checked={formData.terms}
-              aria-label='Agree to terms and conditions'
-            />
-            <label htmlFor='t&c' className='ml-2'>
-              T&C
-            </label>
-          </div>
-          <SignupButton htmlElement='button' type='submit'>
-            Signup
-          </SignupButton>
-        </form>
+        <HeroForm />
         <div className='absolute md:bottom-[-1.5rem] md:top-[30rem] top-[48rem] md:right-[15.5rem] right-[8.5rem] md:h-[30%] w-[50%] md:w-[30%] h-[40%]'>
           <Image src='/arrow_cta.svg' alt='Arrow CTA' fill />
         </div>
