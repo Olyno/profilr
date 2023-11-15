@@ -27,7 +27,7 @@ export default () => {
           className='rounded-md'
         />
         <HeroForm />
-        <div className='absolute md:bottom-[-1.5rem] md:top-[30rem] top-[48rem] md:right-[15.5rem] right-[8.5rem] md:h-[30%] w-[50%] md:w-[30%] h-[40%]'>
+        <div className='absolute md:bottom-[-1.5rem] md:top-[32.5rem] top-[48rem] md:right-[15.5rem] right-[8.5rem] md:h-[23%] w-[50%] md:w-[30%] h-[40%]'>
           <Image src='/arrow_cta.svg' alt='Arrow CTA' fill />
         </div>
       </main>
